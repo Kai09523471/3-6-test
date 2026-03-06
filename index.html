@@ -2,45 +2,41 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio | 自己紹介</title>
+    <title>TAKAHASHI KAI - Player Info</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="game-container">
+        <header>
+            <h1 class="pixel-font">PLAYER: TAKAHASHI KAI</h1>
+        </header>
 
-    <header>
-        <h1>たかはし かい</h1>
-        <p>AI App Developer / Student</p>
-    </header>
-
-    <main>
-        <section id="about">
-            <h2>About Me</h2>
-            <p>こんにちは！GitHubで面白いアプリを作っています。最近は生成AIと脱出ゲームの融合に興味があります。</p>
-        </section>
-
-        <section id="skills">
-            <h2>Skills</h2>
-            <ul>
-                <li>HTML / CSS / JavaScript</li>
-                <li>Python (AI開発)</li>
-                <li>GitHub / Git</li>
-            </ul>
-        </section>
-
-        <section id="projects">
-            <h2>Projects</h2>
-            <div class="project-card">
-                <h3>🚀 AI Chat App</h3>
-                <p>Gemini APIを使ったシンプルなチャットボットです。</p>
-                <a href="#">Repoを見る</a>
+        <div class="profile-layout">
+            <div class="status-window">
+                <h2 class="title">STATUS</h2>
+                <p>HP: 100/100 (元気)</p>
+                <p>MP: 10/100 (デバッグ中につき枯渇)</p>
+                <div class="exp-bar">EXP: <div class="progress"></div></div>
             </div>
-        </section>
-    </main>
 
-    <footer>
-        <p>© 2024 Your Name</p>
-    </footer>
+            <div class="message-box" onclick="nextText()">
+                <p id="dialogue">「やあ！僕は たかはしかい。GitHubで面白いものを作っているよ。」</p>
+                <span class="arrow">▼</span>
+            </div>
+        </div>
+    </div>
 
+    <script>
+        const texts = [
+            "「やあ！僕は たかはしかい。GitHubで面白いものを作っているよ。」",
+            "「最近は生成AIを使った脱出ゲームにハマっているんだ。」",
+            "「君も一緒に面白いコードを書かないかい？」"
+        ];
+        let index = 0;
+        function nextText() {
+            index = (index + 1) % texts.length;
+            document.getElementById('dialogue').innerText = texts[index];
+        }
+    </script>
 </body>
 </html>
